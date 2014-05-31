@@ -3,7 +3,8 @@ class CreateRawPages < ActiveRecord::Migration
     create_table :raw_pages do |t|
       t.string :url
       t.text :html
-      t.boolean :is_contest, default: false
+      t.string :type
+      t.boolean :is_parsed, default: false
       t.timestamps
     end
   end

@@ -9,7 +9,6 @@ url_arr = hash.values
               .map(&:values).flatten
               .select { |str| str.match('dish') }
 
-
 url_arr.each_with_index do |url, i|
   puts "#{i+1}: #{url}"
   html = Net::HTTP.get(URI.parse(url))

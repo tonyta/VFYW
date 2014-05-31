@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531000416) do
+ActiveRecord::Schema.define(version: 20140531163751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,19 @@ ActiveRecord::Schema.define(version: 20140531000416) do
   create_table "raw_pages", force: true do |t|
     t.string   "url"
     t.text     "html"
-    t.boolean  "is_contest", default: false
+    t.string   "category"
+    t.boolean  "is_parsed",  default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "raw_pages", ["category"], name: "index_raw_pages_on_category", using: :btree
+
+  create_table "views", force: true do |t|
+    t.string   "url"
+    t.datetime "posted_at"
+    t.string   "description"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

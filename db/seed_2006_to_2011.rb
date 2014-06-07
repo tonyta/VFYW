@@ -1,6 +1,6 @@
 require 'yaml'
 
-file = Rails.root.join('db', 'urls_2012_to_05_2014.yaml')
+file = Rails.root.join('db', 'urls_2006_to_2011.yaml')
 
 hash = YAML.load(open file)
 

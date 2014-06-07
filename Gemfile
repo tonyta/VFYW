@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'pry-rails'
 gem 'nokogiri'
+gem 'launchy'
 
 gem 'carrierwave'
 

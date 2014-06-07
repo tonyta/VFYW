@@ -122,3 +122,45 @@ end
  "845 Buenos Aires, Argentina 5.30 pm 2013-03-09 01:30:00 UTC"]
 
 url = URI.parse("http://api.tiles.mapbox.com/v3/tonyta.idmp7oda/geocode/Udaipur+India;Khuntan+Thailand.json")
+
+
+
+"id in ('2459')"
+2459 - special (at my window!)
+
+"id in ('2638','2639','2641')"
+2638 - contest
+2639 - contest
+2641 - contest
+
+"id in ('1731','1485','2406','2801','2812','2828','2835','2843','2853','3034')"
+1731 - XXX racoons, omit
+1485 - bird... omit
+2406 - contest archive... omit
+2801 - about book... omit
+2812 - about book... omit
+2828 - about book... omit
+2835 - about book... omit
+2843 - about book... omit
+2853 - about book... omit
+3034 - about book... omit
+
+"id in ('2155','2458','2160','2316','2335','3096','3467','3613')"
+2155 - tehran pic from 2009 (not 2011)
+2458 - double-rainbow (3 pics)
+2160 - comment belongs to id 2161
+2316 - comment belongs to id 2318
+2335 - comment belongs to id 2336
+3096 - triple views!
+3467 - triple views!
+3613 - old archive from the atlantic
+
+http://dish.andrewsullivan.com/2010/10/11/the-view-from-your-window-14-27/ -- omit
+
+
+location fix
+
+> <
+> <
+
+https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx?&city=San%20Andres%20Island&state=ca&zip=90210&apikey=cad0ff6dfd434a0788e344e89109d61e&format=csv&census=true&censusYear=2000|2010&notStore=false&version=4.01

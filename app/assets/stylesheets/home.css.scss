@@ -1,0 +1,105 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blueDark: #053857;
+$blueLight: #9EC8DD;
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+#window {
+  margin: 10px;
+  float: left;
+}
+
+#logo {
+  float: left;
+  margin-top: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  span {
+    font-weight: 100;
+    letter-spacing: 2px;
+
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $blueDark;
+  border-bottom: 4px solid $blueLight;
+}
+
+ul.nav {
+  position: relative;
+  left: 0;
+  display: block;
+  margin: 12px 10px 0 0;
+  float: right;
+  li {
+    font-size: 1.2em;
+    margin: 10px;
+    float: left;
+    list-style: none;
+    a {
+      color: #FFF;
+      text-decoration: none;
+      &:hover {
+        color: $blueLight;
+        text-decoration: underline;
+      }
+
+
+    }
+  }
+}
+
+.container {
+  position: fixed;
+  top: 64px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: $blueDark;
+  }
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 300px;
+  left: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $blueDark;
+  height: 20px;
+}

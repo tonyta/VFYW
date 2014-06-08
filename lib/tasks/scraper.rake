@@ -1,4 +1,4 @@
-require Rails.root.join('db', 'scraper.rb')
+require Rails.root.join('db', 'nominatim.rb')
 
 namespace :scraper do
   desc "scrapes urls for vfyw pages"
@@ -112,6 +112,38 @@ namespace :scraper do
     end
   end
 
+  task :clean_loc2 => :environment do
+    View.all.each do |view|
+      location = view.location
+      match = /noon|afternoon|morning|today|midnight|dusk|sunset|dawn|State/
+      if location.match(match) || location.match(/\.$/)
+        puts "current location: #{location}"
+        print "fix location: "
+        input = STDIN.gets.chomp
+        unless input.empty?
+          view.update(location: input, geocode_json: nil)
+        end
+      end
+    end
+  end
+
+  task :clean_loc3 => :environment do
+    View.all.each do |view|
+      if view.geocode_json.nil?
+        location = view.location
+        www_encode = URI.encode_www_form(q: location)
+        puts "current location: #{location}"
+        Launchy.open(view.url)
+        Launchy.open("http://google.com/search?#{www_encode}")
+        print "fix location: "
+        input = STDIN.gets.chomp
+        unless input.empty?
+          view.update(location: input, geocode_json: nil)
+        end
+      end
+    end
+  end
+
   task :clean_pic => :environment do
     View.all.each do |view|
       if view.picture_url.nil?
@@ -124,6 +156,4 @@ namespace :scraper do
       end
     end
   end
-
-
 end

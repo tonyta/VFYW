@@ -164,3 +164,17 @@ location fix
 > <
 
 https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx?&city=San%20Andres%20Island&state=ca&zip=90210&apikey=cad0ff6dfd434a0788e344e89109d61e&format=csv&census=true&censusYear=2000|2010&notStore=false&version=4.01
+
+
+v.geocode_json.each do |geo|
+  puts geo["type"]
+  if geo["type"].match(/town|city/)
+    hash = {display_name: geo["display_name"], lat: geo["lat"], lon: geo["lon"]}
+    v.update(hash)
+    break
+  end
+end
+
+
+10.7754799,106.7021449
+noon|afternoon|morning|today|midnight|dusk|sunset|dawn

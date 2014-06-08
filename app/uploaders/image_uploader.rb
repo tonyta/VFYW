@@ -16,7 +16,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   process :fix_rotation # this should go before all other "process" steps
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [400, 400]
+
+  version :thumb do
+    process :resize_to_fill => [120,120]
+  end
 
   def extension_white_list
     %w(jpg jpeg gif png)

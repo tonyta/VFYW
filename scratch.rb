@@ -178,3 +178,22 @@ end
 
 10.7754799,106.7021449
 noon|afternoon|morning|today|midnight|dusk|sunset|dawn
+
+view = View.first
+
+pic_url = view.picture_url
+uri = URI.parse(pic_url)
+uri.query = URI.encode_www_form(w: 400)
+
+ext = uri.path.match(/\.(\w{3,4})$/)[1]
+tmp_file = Rails.root.join('tmp', 'img', "tmp_image.#{ext}")
+
+Net::HTTP.start(uri.host) do |http|
+  response = http.get(uri)
+  open(tmp_file, 'wb') { |f| f.write response.body }
+end
+
+view.image = File.open(tmp_file)
+view.save!
+
+pg

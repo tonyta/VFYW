@@ -2,15 +2,17 @@
 <html>
 <head>
   <title>ViewFromWindow</title>
+  <script src="/assets/js/geojson.js"></script>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
-  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
   <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+
+
 </head>
 <body>
 <%= render 'layouts/header' %>

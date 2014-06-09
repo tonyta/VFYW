@@ -197,3 +197,18 @@ view.image = File.open(tmp_file)
 view.save!
 
 pg
+
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+
+10 - 3 = #050926
+4 am = #021B53
+5 = 126482
+6 = C4A65A
+7 = C0E0DD
+8 - 5 = BAD6FF
+6 = 93C0FF
+7 = 745FD3
+8 = B64DC1
+9 = 773A7F

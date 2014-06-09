@@ -19,6 +19,7 @@ class View < ActiveRecord::Base
         id: self.id,
         time: time,
         date: date,
+        thumb: self.image.thumb.url,
         title: self.location,
         "marker-color" => get_color,
         "marker-size" => "small"

@@ -29,11 +29,17 @@ $(function() {
   var map = L.mapbox.map('map', 'tonyta.if74jkhj')
     .setView([30,11], 2)
 
-  var markers = map.featureLayer
-
-  markers.on('click', function(s) {
-    console.log(s.layer.feature);
-  });
+  map.featureLayer
+    .on('click', function(m) {
+      console.log(m);
+    })
+    .on('mouseover', function(m) {
+      m.layer.setPopupContent("<img src='" + m.layer.feature.properties.thumb + "' width='60px'>");
+      m.layer.openPopup();
+    })
+    .on('mouseout', function(m) {
+      m.layer.closePopup();
+    });
 
   var markerCtrl = {
     timeRange: [8, 12],

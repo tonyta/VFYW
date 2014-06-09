@@ -116,3 +116,17 @@ footer {
   height: 20px;
 }
 
+div.leaflet-popup-content-wrapper {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0,0,0,0.7);
+  .leaflet-popup-content {
+    height: 60px;
+    width: 60px;
+    padding: 4px;
+  }
+}
+
+div.leaflet-popup-tip {
+  border-top: 10px solid rgba(0,0,0,0.7);
+}

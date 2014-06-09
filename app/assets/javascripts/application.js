@@ -22,7 +22,19 @@
 // ];
 
 
+function updateSidebar(id) {
+  url = "/" + id + ".json";
+  $.get(url, function(data) {
+    $('#vfyw-container').show();
+    $('#vfyw-image').attr('src', data.image);
+    $('#vfyw-posted').text(data.posted);
+    $('#vfyw-description').text(data.description);
+    $('#vfyw-url').attr('href', data.url);
+  })
+}
+
 $(function() {
+  $('#vfyw-container').hide();
 
 // MAP
 
@@ -31,7 +43,7 @@ $(function() {
 
   map.featureLayer
     .on('click', function(m) {
-      console.log(m);
+      updateSidebar(m.layer.feature.properties.id);
     })
     .on('mouseover', function(m) {
       m.layer.setPopupContent("<img src='" + m.layer.feature.properties.thumb + "' width='60px'>");
@@ -42,7 +54,7 @@ $(function() {
     });
 
   var markerCtrl = {
-    timeRange: [8, 12],
+    timeRange: [4, 8],
     dateRange: [Date.now() - 31556900000, Date.now()],
     filtered: null,
     filterTimeDate: function() {
@@ -79,7 +91,7 @@ $(function() {
 // SLIDERS
 
   var timeUtilities = {
-    initialRange: [8, 12],
+    initialRange: [4, 8],
     get12Hour: function(hour) {
       if (hour === 0 || hour === 24) {
         return "midnight";

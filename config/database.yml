@@ -52,6 +52,6 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: view_from_window_production
+  database: view_from_window_development
   pool: 5
   username:

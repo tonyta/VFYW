@@ -134,6 +134,7 @@ namespace :geo do
 
   desc "bakes out geojson file"
   task :bake => :environment do
+    mkdir Rails.root.join('public', 'assets', 'js')
     file_path = Rails.root.join('public', 'assets', 'js', 'geojson.js')
     f = File.open(file_path, 'w+') do |f|
       f.write "var geojson = "

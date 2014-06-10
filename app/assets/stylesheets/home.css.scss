@@ -4,6 +4,7 @@
 
 $blueDark: #053857;
 $blueLight: #9EC8DD;
+$redLight: #FEADAA;
 
 body {
   margin: 0;
@@ -77,6 +78,7 @@ ul.nav {
   bottom: 20px;
   left: 0;
   right: 0;
+  background-color: $blueDark;
 }
 
 .sidebar {
@@ -87,7 +89,6 @@ ul.nav {
   right: 0;
   padding: 20px;
   width: 300px;
-  background-color: $blueDark;
   #slider-container {
     .slider {
       font-size: 0.8em;
@@ -141,6 +142,31 @@ footer {
   right: 0;
   background-color: $blueDark;
   height: 20px;
+}
+
+.about-content {
+  width: 600px;
+  margin: 10px auto;
+  letter-spacing: 1px;
+  font-weight: 300;
+  h2 {
+    margin-top: 40px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 1.8em;
+  }
+  a {
+    color: $redLight;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  blockquote {
+    font-weight: 100;
+    font-style: italic;
+  }
 }
 
 div.leaflet-popup-content-wrapper {

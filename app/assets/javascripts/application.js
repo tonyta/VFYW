@@ -14,13 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-// var geojson = [
-//   {"type":"Feature","geometry":{"type":"Point","coordinates":["100.258333","19.833333"]},"properties":{"id": 123, "title":"Khuntan, Thailand","description":"Khuntan, Thailand, 6 pm","marker-color":"#fc4353","marker-size":"small"}},
-//   {"type":"Feature","geometry":{"type":"Point","coordinates":["-73.507061","43.639232"]},"properties":{"id": 456, "title":"Hulett’s Landing, New York","description":"Hulett’s Landing, New York, 5 pm","marker-color":"#fc4353","marker-size":"small"}},
-//   {"type":"Feature","geometry":{"type":"Point","coordinates":["-124.318632","49.321623"]},"properties":{"id": 789, "title":"Parksville, British Columbia","description":"Parksville, British Columbia, 6.57 am","marker-color":"#fc4353","marker-size":"small"}}
-// ];
-
-
 function updateSidebar(id) {
   url = "/" + id + ".json";
   $.get(url, function(data) {
@@ -34,6 +27,45 @@ function updateSidebar(id) {
 
 $(function() {
   $('#vfyw-container').hide();
+
+  var aboutCtrl = {
+    aboutStatus: false,
+    aboutDiv: $('#about'),
+    title: $('#logo').parent(),
+    subtitle: $('#logo > span'),
+    aboutBtn: $('#about-toggle'),
+
+    showAbout: function() {
+      this.aboutDiv.show();
+      this.subtitle.text(' | about');
+      this.aboutBtn.text("Map");
+      this.aboutStatus = true;
+    },
+    hideAbout: function() {
+      this.aboutDiv.hide();
+      this.subtitle.text(' | map');
+      this.aboutBtn.text("About");
+      this.aboutStatus = false;
+    },
+    initialize: function() {
+      var self = this;
+      self.hideAbout();
+      this.aboutBtn.on('click', function(e) {
+        e.preventDefault();
+        if (self.aboutStatus === false) {
+          self.showAbout();
+        } else {
+          self.hideAbout();
+        }
+      });
+      this.title.on('click', function() {
+        self.hideAbout();
+      });
+    }
+  }
+
+  aboutCtrl.initialize();
+
 
 // MAP
 

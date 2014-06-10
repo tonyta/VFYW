@@ -88,15 +88,22 @@ ul.nav {
   padding: 20px;
   width: 300px;
   background-color: $blueDark;
-  .slider {
-    font-size: 0.8em;
-    margin: 4px auto;
-  }
-  h4 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    &:first-child {
-      margin-top: 0;
+  #slider-container {
+    .slider {
+      font-size: 0.8em;
+      margin: 4px auto;
+    }
+    h4 {
+      margin-top: 16px;
+      margin-bottom: 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    p {
+      margin: 0;
+      font-weight: 100;
+      font-style: italic;
     }
   }
 }
@@ -104,13 +111,18 @@ ul.nav {
 #vfyw-container {
   margin-top: 20px;
   border-top: 1px solid white;
+  #vfyw-image {
+    margin-top: 20px;
+    max-width: 252px;
+    height: auto;
+    border: 4px solid white;
+  }
   #vfyw-posted {
     font-style: italic;
   }
-  #vfyw-image {
-    max-width: 260px;
-    height: auto;
-    border: 4px solid white;
+  #vfyw-description {
+    font-weight: 100;
+    letter-spacing: 1px;
   }
 }
 
